@@ -4,6 +4,9 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
+                        <span id="notice" style="color: green;"><h3><%= notice %></h3></span>
+                         <span id="alert" style="color: red;"><%= alert %></span>
+                        
                         <h2 class="form-title">Sign up</h2>
                         <%= form_for @user, url: users_create_user_path do |f|%>
                             <div class="form-group">

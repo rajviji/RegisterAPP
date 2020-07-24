@@ -18,10 +18,11 @@ class UsersController < ApplicationController
   	if @user.save
 		UserMailer.welcome_email(@user).deliver_later
   		flash[:notice] = 'Email has been sent. Please active your account'
+      redirect_to action: 'login'
   	else
-  		flash[:alert] = @user.errors
+  		flash[:alert] = @user.errors.full_messages.first
+      render action: 'register'
   	end
-  	redirect_to action: 'login'
   end
 
   def account_activation
