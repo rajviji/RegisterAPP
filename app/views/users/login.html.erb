@@ -1,0 +1,46 @@
+<div class="main">
+      <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="/assets/signin-image.jpg" alt="sing up image"></figure>
+                          <%= link_to 'Create an account', users_register_path, class: "signup-image-link"%>
+                    </div>
+
+                    <div class="signin-form">
+                    	<span id="notice" style="color: green;"><h3><%= notice %></h3></span>
+                         <span id="alert" style="color: red;"><%= alert %></span>
+                        <h2 class="form-title">Sign in</h2>
+                         
+                        <%= form_for 'login', url: users_login_user_path do |f|%>
+                            <div class="form-group">
+                                <label for="email"><i class="fa fa-envelope"></i></label>
+                                <%= f.email_field :email, placeholder: 'Your Email', required: true, autofocus: true%>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="fa fa-key"></i></label>
+                                <%= f.password_field :password, placeholder: "Your Password", required: true%>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" class="form-submit" value="Log in"/>
+                            </div>
+                        <%end%>
+                        <div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google fa fa-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+</div>

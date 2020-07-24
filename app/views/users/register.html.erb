@@ -1,0 +1,41 @@
+<div class="main">
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <%= form_for @user, url: users_create_user_path do |f|%>
+                            <div class="form-group">
+                                <label for="name"><i class="fa fa-user-o" aria-hidden="true"></i></label>
+                                <%= f.text_field :first_name, placeholder: "Your First Name", required: true, autofocus: true%>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="fa fa-user-o" aria-hidden="true"></i></label>
+                                <%= f.text_field :last_name, placeholder: "Your Last Name", required: true%>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="fa fa-user" aria-hidden="true"></i></label>
+                                <%= f.text_field :username, placeholder: "Enter User Name", required: true%>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fa fa-envelope"></i></label>
+                                <%= f.email_field :email, placeholder: "Your Email", required: true%>
+                            </div>
+                            <div class="form-group">
+                                <label for="city"><i class="fa fa-map-marker"></i></label>
+                                <%= f.text_field :city, placeholder: "Enter City details", required: true%>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" class="form-submit">
+                            </div>
+                        <%end%>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="/assets/signup-image.jpg" alt="sing up image"></figure>
+                        <%= link_to 'I am already member',users_login_path,  class: 'signup-image-link' %>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>

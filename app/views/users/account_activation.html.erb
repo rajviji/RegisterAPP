@@ -1,0 +1,33 @@
+<div class="main">
+      <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="/assets/816.jpg" alt="create password image"></figure>
+                    </div>
+
+                    <div class="signin-form">
+                    	<%if @user.active_status == true%>
+                         <span id="notice" style="color: red;"><h3>Email has been verified already</h3></span>
+                         <%else%>
+                         <span id="alert" style="color: green;"><h3>Email has been verified Successfully</h3></span>
+                         <h2 class="form-title">Set Password</h2>
+                        <%= form_for @user, url: users_update_password_path do |f|%>
+                            <div class="form-group">
+                                <label for="password"><i class="fa fa-key"></i></label>
+                                <%= f.password_field :password, placeholder: "Enter your Password", required: true%>
+                            </div>
+                            <%= f.hidden_field :id, value: params["id"]%>
+                            <div class="form-group form-button">
+                                <input type="submit" class="form-submit">
+                            </div>
+                        <% end %>
+                        <% end %>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+</div>
